@@ -10,7 +10,7 @@ import { useLocation } from "react-router-dom";
 
 
 function NewsDetail() {
-const VAU = "https://fullstack-chat-app-puce-two.vercel.app";
+const VAU = "https://fullstack-chat-hnl4krmrq-aadhavdakshan21-5960s-projects.vercel.app";
 
 const location = useLocation();
 

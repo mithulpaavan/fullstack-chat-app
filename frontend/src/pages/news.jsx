@@ -11,7 +11,7 @@ import Navbar from '../components/navbar.jsx';
 
 function News() {
 
-  const VAU = "https://fullstack-chat-app-puce-two.vercel.app";
+  const VAU = "https://fullstack-chat-hnl4krmrq-aadhavdakshan21-5960s-projects.vercel.app";
 
   const options = [
     {value: "breaking", label: "Breaking"},
