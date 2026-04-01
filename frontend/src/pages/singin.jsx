@@ -16,7 +16,7 @@ function SignIn() {
     e.preventDefault();
 
     try{
-        const res = await axios.post('http://localhost:3000/api/auth/signin', 
+        const res = await axios.post('https://fullstack-chat-hnl4krmrq-aadhavdakshan21-5960s-projects.vercel.app', 
           {email, password}, {
           withCredentials: true
         });

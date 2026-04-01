@@ -22,7 +22,7 @@ function BookMarks() {
   useEffect(()=>{
     const fetchBookmarks = async () => {
       try{
-        const response = await axios.get('http://localhost:3000/api/news/bookmarks', {
+        const response = await axios.get('https://fullstack-chat-hnl4krmrq-aadhavdakshan21-5960s-projects.vercel.app/api/news/bookmarks', {
           withCredentials: true
         });
         console.log(response.data);
