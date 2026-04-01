@@ -8,8 +8,9 @@ import { useLocation } from "react-router-dom";
 
 
 
-function NewsDetail() {
 
+function NewsDetail() {
+const VAU = "https://fullstack-chat-app-puce-two.vercel.app";
 
 const location = useLocation();
 
@@ -36,7 +37,7 @@ const [isBookmarked, setIsBookmarked] = useState(isBookmarkedInitial);
 
     const fetchNews = async () => {
         try{
-            const response  = await axios.get(`http://localhost:3000/api/news/${id}`, {withCredentials: true});
+            const response  = await axios.get(`${VAU}/api/news/${id}`, {withCredentials: true});
 
             console.log(response.data);
             setArticle(response.data);
@@ -55,7 +56,7 @@ const [isBookmarked, setIsBookmarked] = useState(isBookmarkedInitial);
   function handleBookmarkAdd() {
         const add = async () => {
             try{
-                const response = await axios.post(`http://localhost:3000/api/news/bookmark/${article.articleId}`,{},{withCredentials: true});
+                const response = await axios.post(`${VAU}/${article.articleId}`,{},{withCredentials: true});
                 console.log(response)
                 if(response.data.success){
                     setIsBookmarked(true);
@@ -73,7 +74,7 @@ const [isBookmarked, setIsBookmarked] = useState(isBookmarkedInitial);
   function handleBookmarkDelete() {
     const deletebookmark = async () => {
         try{
-            const response = await axios.delete(`http://localhost:3000/api/news/bookmark/${article.articleId}`, {
+            const response = await axios.delete(`${VAU}/api/news/bookmark/${article.articleId}`, {
                 withCredentials: true
             }) 
             console.log(response.data);
@@ -91,7 +92,7 @@ const [isBookmarked, setIsBookmarked] = useState(isBookmarkedInitial);
 
     const getIt = async() => {
     try{
-        const response =  await axios.post(`http://localhost:3000/api/news/summary`, {
+        const response =  await axios.post(`${VAU}/api/news/summary`, {
             link : article.link,
             title: article.link,
             description: article.description

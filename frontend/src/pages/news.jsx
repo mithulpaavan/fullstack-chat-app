@@ -11,6 +11,8 @@ import Navbar from '../components/navbar.jsx';
 
 function News() {
 
+  const VAU = "https://fullstack-chat-app-puce-two.vercel.app";
+
   const options = [
     {value: "breaking", label: "Breaking"},
     {value: "business", label: "Business"},
@@ -48,7 +50,7 @@ function News() {
 
     const fetchUsername = async () => {
       try{
-        const response = await axios.get('http://localhost:3000/api/news/check', {withCredentials: true});
+        const response = await axios.get(`${VAU}/api/news/check`, {withCredentials: true});
         console.log(response.data);
         console.log(response.data.username)
         setUsername(response.data.username)
@@ -61,7 +63,7 @@ function News() {
 
     const fetchNews = async () => {
     try{
-      const response = await axios.get('http://localhost:3000/api/news/', {withCredentials: true});
+      const response = await axios.get(`${VAU}/api/news/`, {withCredentials: true});
       console.log(response);
       setNews(response.data.articles);
       setIsLoading(false);
@@ -97,7 +99,7 @@ function News() {
       console.log("yoo")
       setIsLoading(true);
       const categories = selectedOptions.map(o => o.value).join(',');
-      const response = await axios.get(`http://localhost:3000/api/news?category=${categories}&q=${search}`, {withCredentials: true});
+      const response = await axios.get(`${VAU}/api/news?category=${categories}&q=${search}`, {withCredentials: true});
       console.log(response);
       setNews(response.data.articles);
       setIsLoading(false);
@@ -118,7 +120,7 @@ function News() {
 
   const logout = async () => {
     try{
-      const response = await axios.post('http://localhost:3000/api/auth/signout',{}, {withCredentials: true});
+      const response = await axios.post(`${VAU}/api/auth/signout`,{}, {withCredentials: true});
       console.log(response);
       navigate('/signin');
     }
