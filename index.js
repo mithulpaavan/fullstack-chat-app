@@ -11,13 +11,26 @@ const cors = require('cors');
 
 const mongoose = require('mongoose');
 
+const cors = require("cors");
+
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://timely-gaffire-dc6dcc.netlify.app"
+];
+
 app.use(cors({
-  origin: [
-    "https://timely-gaufre-dc6dfc.netlify.app/",
-    "http://localhost:5173",
-  ],
-  credentials: true
+  origin: function(origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+  credentials: true,
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"]
 }));
+app.options("*", cors());
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(cookieParser());
