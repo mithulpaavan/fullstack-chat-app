@@ -7,8 +7,6 @@ const newsRouter = require('./router/newsRouter.js');
 
 const cookieParser = require('cookie-parser');
 
-const cors = require('cors');
-
 const mongoose = require('mongoose');
 
 const cors = require("cors");
