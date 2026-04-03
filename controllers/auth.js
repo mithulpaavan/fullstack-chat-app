@@ -68,7 +68,7 @@ exports.signin = async (req, res) => {
         res.cookie('token', token, {
             httpOnly: true,
             secure: true,
-            samesite: "lax"
+            samesite: "None"
         });
 
         res.status(200).json({success: true, message: "succeefully registered"})
@@ -84,7 +84,7 @@ exports.signout = async (req, res) => {
    res.cookie('token', '', {
     httpOnly: true,
     secure: true, 
-    sameSite: 'lax',
+    sameSite: 'None',
     expires: new Date(0),
     path: '/',   
   });
