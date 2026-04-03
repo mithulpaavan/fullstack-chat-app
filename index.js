@@ -10,7 +10,7 @@ const cookieParser = require('cookie-parser');
 const mongoose = require('mongoose');
 const cors = require('cors');
 app.use(cors({
-  origin: 'https://timely-gaufre-dc6dfc.netlify.app',
+  origin: 'https://luminous-pika-80f277.netlify.app',
   credentials: true
 }));
 app.use(express.json());
