@@ -11,7 +11,10 @@ const cors = require('cors');
 
 const mongoose = require('mongoose');
 
-app.use(cors());
+app.use(cors({
+  origin: "https://delightful-granita-3df5c2.netlify.app",
+  credentials: true
+})); 
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(cookieParser());

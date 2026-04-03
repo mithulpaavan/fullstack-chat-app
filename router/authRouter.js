@@ -8,6 +8,6 @@ const {signup, signin, signout} = require('../controllers/auth.js')
 
 router.post('/signin', signin);
 router.post('/signup', signup);
-router.post('/signout',signout); //needs middleware
+router.post('/signout', signout); //needs middleware
 
 module.exports = router;
