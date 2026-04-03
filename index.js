@@ -11,7 +11,13 @@ const cors = require('cors');
 
 const mongoose = require('mongoose');
 
-
+app.use(cors({
+  origin: [
+    "https://timely-gaufre-dc6dfc.netlify.app/",
+    "http://localhost:5173",
+  ],
+  credentials: true
+}));
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(cookieParser());
